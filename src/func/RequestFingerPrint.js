@@ -4,7 +4,7 @@ const RequestFingerPrint = (req, res) => {
     const send = (msg) =>{
         ConnectPort.gI().clearCallback();
         res.json({
-            data: regexIdFingerPrint(msg)
+            id: regexIdFingerPrint(msg)
         });
     }
     const callback = (data) => {
