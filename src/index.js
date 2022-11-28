@@ -8,9 +8,15 @@ const { DeleteAllFingerPrint } = require('./func/DeleteAllFingerPrint');
 const { CountUser } = require('./func/CountUser');
 const { StatusDevice } = require('./func/StatusDevice');
 const express = require('express')
+const cors = require('cors')
 const app = express()
 dotenv.config();
 ConnectPort.gI();
+app.use(cors(corsConfig))
+app.use((req, res, next) => {
+    res.setHeader('Content-Type', 'application/json');
+    next();
+})
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // mở ô
