@@ -12,6 +12,10 @@ const cors = require('cors')
 const app = express()
 dotenv.config();
 ConnectPort.gI();
+const corsConfig = {
+    credentials: true,
+    origin: true,
+}
 app.use(cors(corsConfig))
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
