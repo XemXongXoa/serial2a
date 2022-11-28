@@ -29,6 +29,7 @@ class ConnectPort {
 		delimiter: '\r\n'
 	}));
 	this.parser.on('data',(data)=>{
+    console.log("data = "+data);
 		this.callback(data);
 	})
   }
