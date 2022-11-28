@@ -1,6 +1,11 @@
 module.exports = {
     regexIdFingerPrint(str){
-        const regex = '[0-9]{1,9999}';
-        return str.match(regex)[0]
+        try{
+            const regex = '[0-9]{1,9999}';
+            return str.match(regex)[0]
+        }
+        catch(e){
+            return "0";
+        }
     }
 }
